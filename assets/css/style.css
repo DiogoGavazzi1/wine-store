@@ -1,37 +1,77 @@
+/* ==============================
+   RESET / BASE
+============================== */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: #0f1f1a;
+    color: #ffffff;
+}
+
+/* ==============================
+   VIEWPORT FIX (MOBILE)
+============================== */
+.container-fluid {
+    min-height: 100svh;
+}
+
+@supports not (height: 100svh) {
+    .container-fluid {
+        min-height: 100vh;
+    }
+}
+
+/* ==============================
+   LEFT IMAGE
+============================== */
+.login-bg {
     background: url("../img/leafs.jpg") center / cover no-repeat;
 }
 
-/* LEFT IMAGE */
-.login-bg {
-    background: url("../img/leafs.jpg") center/cover no-repeat;
-}
+/* ==================================================
+   RIGHT PANEL
+================================================== */
 
-/* RIGHT PANEL */
+/* 🔵 VERSÃO SÓLIDA (GUARDADA PARA CLIENTE) */
+/*
 .login-panel {
-    background: rgba(15, 31, 26, 0.4);
+    background-color: #0f1f1a;
+}
+*/
+
+/* 🟢 VERSÃO COM BLUR (ATIVA) */
+.login-panel {
+    background: rgba(15, 31, 26, 0.6);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
-
-/* CARD */
+/* ==============================
+   LOGIN CARD (GLASS)
+============================== */
 .login-card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 14px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(6px);
-    border-radius: 10px;
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
-
-/* INPUTS */
+/* ==============================
+   INPUTS
+============================== */
 .custom-input {
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 0;
-    color: #fff;
+    color: #ffffff;
 }
 
 .custom-input::placeholder {
@@ -42,10 +82,12 @@ body {
     background: transparent;
     box-shadow: none;
     border-bottom-color: #ffffff;
-    color: #fff;
+    color: #ffffff;
 }
 
-/* CHECKBOX */
+/* ==============================
+   CHECKBOX
+============================== */
 .form-check-input {
     background-color: transparent;
     border-color: rgba(255, 255, 255, 0.6);
@@ -54,21 +96,40 @@ body {
 .form-check-input:checked {
     background-color: #1a5723;
     border-color: #1a5723;
-
 }
 
 .form-check-input:focus {
     box-shadow: none;
     border-color: #1a5723;
-
 }
 
-/* BUTTON */
+/* ==============================
+   BUTTON
+============================== */
 .btn-dark {
-    background-color: #000;
+    background-color: #000000;
     border: none;
 }
 
 .btn-dark:hover {
-    background-color: #1a5723;
+    background-color: #111111;
+}
+
+/* ==============================
+   MOBILE FIXES
+============================== */
+@media (max-width: 768px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .login-panel {
+        padding: 1.5rem 1rem;
+    }
+
+    .login-card {
+        margin: auto;
+        max-height: calc(100svh - 2rem);
+    }
 }
