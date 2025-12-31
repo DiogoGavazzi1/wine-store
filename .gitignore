@@ -1,0 +1,14 @@
+# Configurações sensíveis
+.env
+config/database.php
+
+# Dependências
+/vendor
+/node_modules
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db

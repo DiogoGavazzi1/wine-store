@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #0f1f1a;
+    background: url("../img/leafs.jpg") center / cover no-repeat;
+}
+
+/* LEFT IMAGE */
+.login-bg {
+    background: url("../img/leafs.jpg") center/cover no-repeat;
+}
+
+/* RIGHT PANEL */
+.login-panel {
+    background: rgba(15, 31, 26, 0.4);
+    backdrop-filter: blur(12px);
+}
+
+
+/* CARD */
+.login-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+}
+
+
+/* INPUTS */
+.custom-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0;
+    color: #fff;
+}
+
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.custom-input:focus {
+    background: transparent;
+    box-shadow: none;
+    border-bottom-color: #ffffff;
+    color: #fff;
+}
+
+/* CHECKBOX */
+.form-check-input {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.form-check-input:checked {
+    background-color: #1a5723;
+    border-color: #1a5723;
+
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+    border-color: #1a5723;
+
+}
+
+/* BUTTON */
+.btn-dark {
+    background-color: #000;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #1a5723;
+}
