@@ -1,0 +1,50 @@
+/* NAVBAR premium */
+.nav-premium {
+    background: rgba(10, 10, 10, .45);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+    padding: 14px 0;
+}
+
+.brand-mark {
+    letter-spacing: .35em;
+    font-size: .9rem;
+    text-transform: uppercase;
+    opacity: .95;
+}
+
+.brand-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 99px;
+    background: var(--gold);
+    margin-right: 10px;
+    box-shadow: 0 0 18px rgba(199, 161, 74, .5);
+}
+
+.nav-link-premium {
+    position: relative;
+    font-size: .95rem;
+    opacity: .9;
+}
+
+.nav-link-premium::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transition: .25s;
+}
+
+.nav-link-premium:hover {
+    opacity: 1;
+    color: #fff
+}
+
+.nav-link-premium:hover::after {
+    width: 100%
+}

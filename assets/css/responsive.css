@@ -1,0 +1,27 @@
+/* Mobile tweaks */
+@media(max-width:768px) {
+    .hero-premium {
+        min-height: 80vh
+    }
+
+    .hero-overlay {
+        background: linear-gradient(180deg, rgba(0, 0, 0, .7), rgba(0, 0, 0, .65))
+    }
+
+    @media(max-width:768px) {
+        .category-card-premium {
+            min-height: auto;
+            max-height: none;
+            padding: 26px 22px;
+        }
+    }
+
+
+    .product-media img {
+        height: 260px
+    }
+
+    .video-frame video {
+        height: 280px
+    }
+}

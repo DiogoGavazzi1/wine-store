@@ -1,0 +1,108 @@
+/* =========================================================
+   CATALOG PAGE
+   File: assets/css/catalog.css
+========================================================= */
+
+.catalog-hero {
+    position: relative;
+    padding: 140px 0 70px;
+    overflow: hidden;
+}
+
+.catalog-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url("../img/hero.jpg") center/cover no-repeat;
+    filter: saturate(1.05) contrast(1.05);
+}
+
+.catalog-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, .82) 0%, rgba(0, 0, 0, .45) 55%, rgba(0, 0, 0, .25) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, .65), transparent 45%, rgba(0, 0, 0, .85));
+}
+
+.catalog-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+}
+
+.catalog-subtitle {
+    color: rgba(255, 255, 255, .72);
+    max-width: 560px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-filters {
+    padding: 70px 0 90px;
+}
+
+/* filtros */
+.filters-card {
+    background: rgba(255, 255, 255, .02);
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .55);
+}
+
+.filter-label {
+    font-size: .82rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .55);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.filter-input {
+    background: rgba(0, 0, 0, .45) !important;
+    border: 1px solid rgba(255, 255, 255, .10) !important;
+    color: rgba(255, 255, 255, .90) !important;
+    border-radius: 14px !important;
+    padding: 12px 14px !important;
+}
+
+.filter-input:focus {
+    box-shadow: none !important;
+    border-color: rgba(214, 182, 106, .35) !important;
+}
+
+/* TAGS */
+.tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    font-size: .78rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(10px);
+}
+
+/* PREMIUM */
+.tag-premium {
+    color: #D6B25E;
+    border: 1px solid #B8923A;
+}
+
+/* RESERVAS */
+.tag-reservas {
+    color: #A63A4A;
+    border: 1px solid #7A1F2B;
+}
+
+/* DIA A DIA */
+.tag-diaadia {
+    color: #B8BDC6;
+    border: 1px solid #6F7682;
+}
+
+/* reuse product-card styles if já tens no style.css */
