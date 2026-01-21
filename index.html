@@ -27,8 +27,6 @@
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/product.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-
-
 </head>
 
 <body>
@@ -54,9 +52,10 @@
                     <li class="nav-item"><a class="nav-link nav-link-premium" href="#premium">Premium</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-premium" href="#contacto">Contacto</a></li>
 
+                    <!-- CARRINHO -->
                     <li class="nav-item ms-lg-3">
-                        <a class="nav-link cart-link" href="#carrinho">
-                            Carrinho <span class="cart-badge">0</span>
+                        <a class="nav-link cart-link" href="cart.html">
+                            Carrinho <span class="cart-badge" id="cart-count">0</span>
                         </a>
                     </li>
                 </ul>
@@ -103,19 +102,11 @@
     </header>
 
 
-    <!--
-    ADMIN FUTURO:
-    imagem de fundo do hero definida por CSS
-    ex: background-image: url(...)
-  -->
-    </section>
-
     <!-- ======================================================
      CATEGORIAS PRINCIPAIS
      ADMIN FUTURO:
      - título
      - descrição
-     - imagem (opcional)
      ====================================================== -->
     <section class="section-dark section-categories">
         <div class="container">
@@ -172,15 +163,26 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
-                            <!-- ADMIN: trocar imagem -->
-                            <img src="./assets/img/img_teste1.png" alt="Vinho" loading="lazy">
+                            <span class="tag tag-premium">Premium</span>
+                            <img src="./assets/img/img_teste1.png" alt="Martino Superiore Petit Verdot" loading="lazy">
                             <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
                         <div class="product-body">
                             <h4>Martino Superiore Petit Verdot</h4>
                             <p class="product-meta">Argentina · Mendoza</p>
                             <p class="product-price">29,90 €</p>
+
+                            <!-- ADD TO CART -->
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 1,
+                                    name: 'Martino Superiore Petit Verdot',
+                                    price: 29.90,
+                                    image: 'assets/img/img_teste1.png',
+                                    meta: 'Argentina · Mendoza',
+                                    tag: 'Premium'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -189,32 +191,52 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-reserva">Dia-a-Dia</span>
-                            <!-- ADMIN: trocar imagem -->
-                            <img src="./assets/img/img_teste2.png" alt="Vinho" loading="lazy">
-                            <a href="#" class="product-quick">Ver Produto</a>
+                            <span class="tag tag-diaadia">Dia-a-dia</span>
+                            <img src="./assets/img/img_teste2.png" alt="Vinho Dia-a-dia" loading="lazy">
+                            <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
                         <div class="product-body">
-                            <h4>Martino Superiore Petit Verdot</h4>
-                            <p class="product-meta">Argentina · Mendoza</p>
-                            <p class="product-price">29,90 €</p>
+                            <h4>Alentejo Tinto Clássico</h4>
+                            <p class="product-meta">Portugal · Alentejo</p>
+                            <p class="product-price">9,90 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 2,
+                                    name: 'Alentejo Tinto Clássico',
+                                    price: 9.90,
+                                    image: 'assets/img/img_teste2.png',
+                                    meta: 'Portugal · Alentejo',
+                                    tag: 'Dia-a-dia'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- PRODUTO 3 -->
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-sm-6 col-lg-4" id="reservas">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-dia_a_dia">Reservas</span>
-                            <!-- ADMIN: trocar imagem -->
-                            <img src="./assets/img/img_teste3.png" alt="Vinho" loading="lazy">
-                            <a href="#" class="product-quick">Ver Produto</a>
+                            <span class="tag tag-reservas">Reservas</span>
+                            <img src="./assets/img/img_teste3.png" alt="Vinho Reservas" loading="lazy">
+                            <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
                         <div class="product-body">
-                            <h4>Martino Superiore Petit Verdot</h4>
-                            <p class="product-meta">Argentina · Mendoza</p>
-                            <p class="product-price">29,90 €</p>
+                            <h4>Douro Reserva Selection</h4>
+                            <p class="product-meta">Portugal · Douro</p>
+                            <p class="product-price">19,90 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 3,
+                                    name: 'Douro Reserva Selection',
+                                    price: 19.90,
+                                    image: 'assets/img/img_teste3.png',
+                                    meta: 'Portugal · Douro',
+                                    tag: 'Reservas'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -223,15 +245,25 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
-                            <!-- ADMIN: trocar imagem -->
-                            <img src="./assets/img/img_teste4.png" alt="Vinho" loading="lazy">
-                            <a href="#" class="product-quick">Ver Produto</a>
+                            <span class="tag tag-premium">Premium</span>
+                            <img src="./assets/img/img_teste4.png" alt="Vinho Premium" loading="lazy">
+                            <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
                         <div class="product-body">
-                            <h4>Martino Superiore Petit Verdot</h4>
-                            <p class="product-meta">Argentina · Mendoza</p>
-                            <p class="product-price">29,90 €</p>
+                            <h4>Barolo Riserva Elegance</h4>
+                            <p class="product-meta">Itália · Piemonte</p>
+                            <p class="product-price">39,90 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 4,
+                                    name: 'Barolo Riserva Elegance',
+                                    price: 39.90,
+                                    image: 'assets/img/img_teste4.png',
+                                    meta: 'Itália · Piemonte',
+                                    tag: 'Premium'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -240,15 +272,25 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
-                            <!-- ADMIN: trocar imagem -->
-                            <img src="./assets/img/img_teste3.png" alt="Vinho" loading="lazy">
-                            <a href="#" class="product-quick">Ver Produto</a>
+                            <span class="tag tag-reservas">Reservas</span>
+                            <img src="./assets/img/img_teste3.png" alt="Vinho Reservas" loading="lazy">
+                            <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
                         <div class="product-body">
-                            <h4>Martino Superiore Petit Verdot</h4>
-                            <p class="product-meta">Argentina · Mendoza</p>
-                            <p class="product-price">29,90 €</p>
+                            <h4>Colheita Especial 2018</h4>
+                            <p class="product-meta">Portugal · Dão</p>
+                            <p class="product-price">17,50 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 5,
+                                    name: 'Colheita Especial 2018',
+                                    price: 17.50,
+                                    image: 'assets/img/img_teste3.png',
+                                    meta: 'Portugal · Dão',
+                                    tag: 'Reservas'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -257,23 +299,30 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
-                            <!-- ADMIN: trocar imagem -->
-                            <img src="./assets/img/img_teste4.png" alt="Vinho" loading="lazy">
-                            <a href="#" class="product-quick">Ver Produto</a>
+                            <span class="tag tag-diaadia">Dia-a-dia</span>
+                            <img src="./assets/img/img_teste4.png" alt="Vinho Dia-a-dia" loading="lazy">
+                            <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
                         <div class="product-body">
-                            <h4>Martino Superiore Petit Verdot</h4>
-                            <p class="product-meta">Argentina · Mendoza</p>
-                            <p class="product-price">29,90 €</p>
+                            <h4>Vinho Verde Fresco</h4>
+                            <p class="product-meta">Portugal · Minho</p>
+                            <p class="product-price">7,90 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 6,
+                                    name: 'Vinho Verde Fresco',
+                                    price: 7.90,
+                                    image: 'assets/img/img_teste4.png',
+                                    meta: 'Portugal · Minho',
+                                    tag: 'Dia-a-dia'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
 
-
-                <!-- ===============================
-                CTA: Ir para Catálogo Completo
-                =============================== -->
+                <!-- CTA: Catálogo -->
                 <div class="text-center mt-5">
                     <a href="catalog.html" class="btn btn-catalog-cta">
                         Ver Catálogo Completo
@@ -281,17 +330,12 @@
                     </a>
                 </div>
 
-
-
             </div>
         </div>
     </section>
 
     <!-- ======================================================
      BLOCO EDITORIAL PREMIUM
-     ADMIN FUTURO:
-     - imagem
-     - texto
      ====================================================== -->
     <section class="section-dark section-premium" id="premium">
         <div class="container">
@@ -305,7 +349,7 @@
                         autenticidade e caráter distintivo.
                     </p>
 
-                    <a href="#" class="btn btn-gold-cta mt-2">Descobrir Seleção</a>
+                    <a href="catalog.html#premium" class="btn btn-gold-cta mt-2">Descobrir Seleção</a>
 
                     <div class="premium-perks mt-4">
                         <div>🍷 Reservas</div>
@@ -329,16 +373,10 @@
 
     <!-- ======================================================
      FOOTER
-     ADMIN FUTURO:
-     - texto
-     - redes sociais
      ====================================================== -->
-    <footer class="footer">
+    <footer class="footer" id="contacto">
         <div class="container text-center">
-            <p>
-                <!-- ADMIN: texto do footer -->
-                © 2026 Wine Store · Curadoria & Excelência
-            </p>
+            <p>© 2026 Wine Store · Curadoria & Excelência</p>
         </div>
     </footer>
 
@@ -346,7 +384,9 @@
      SCRIPTS
      ====================================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="cart.js"></script>
+
+    <!-- Carrinho (LocalStorage) -->
+    <script src="assets/js/cart.js"></script>
 
 </body>
 

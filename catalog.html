@@ -24,8 +24,6 @@
     <link rel="stylesheet" href="assets/css/product.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/catalog.css">
-
-
 </head>
 
 <body>
@@ -46,16 +44,21 @@
 
             <div class="collapse navbar-collapse" id="navMain">
                 <ul class="navbar-nav ms-auto gap-lg-4 align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link nav-link-premium" href="#vinhos">Vinhos</a></li>
+
+                    <!-- ADMIN: menu -->
+                    <li class="nav-item"><a class="nav-link nav-link-premium" href="catalog.html">Vinhos</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-premium" href="#reservas">Reservas</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-premium" href="#premium">Premium</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-premium" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-premium" href="index.html#contacto">Contacto</a>
+                    </li>
 
+                    <!-- CARRINHO -->
                     <li class="nav-item ms-lg-3">
-                        <a class="nav-link cart-link" href="#carrinho">
-                            Carrinho <span class="cart-badge">0</span>
+                        <a class="nav-link cart-link" href="cart.html">
+                            Carrinho <span class="cart-badge" id="cart-count">0</span>
                         </a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -121,56 +124,96 @@
             </div>
 
             <!-- ==================================================
-           GRID DE PRODUTOS
-           ADMIN FUTURO: loop a partir da BD
-           ================================================== -->
-            <div class="row g-4 mt-4">
+                 GRID DE PRODUTOS
+                 ADMIN FUTURO: loop a partir da BD
+                 ================================================== -->
+            <div class="row g-4 mt-4" id="vinhos">
 
                 <!-- PRODUTO 1 -->
                 <div class="col-sm-6 col-lg-4">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
+                            <span class="tag tag-premium">Premium</span>
+
                             <!-- ADMIN: imagem -->
-                            <img src="assets/img/img1.png" alt="Vinho Premium" loading="lazy">
+                            <img src="assets/img/img1.png" alt="Martino Superiore Petit Verdot" loading="lazy">
+
                             <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
+
                         <div class="product-body">
                             <h4>Martino Superiore Petit Verdot</h4>
                             <p class="product-meta">Mendoza · Argentina</p>
                             <p class="product-price">29,90 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 1,
+                                    name: 'Martino Superiore Petit Verdot',
+                                    price: 29.90,
+                                    image: 'assets/img/img1.png',
+                                    meta: 'Mendoza · Argentina',
+                                    tag: 'Premium'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- PRODUTO 2 -->
+                <!-- PRODUTO 2 (RESERVAS) -->
                 <div class="col-sm-6 col-lg-4" id="reservas">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
-                            <img src="assets/img/img_teste1.png" alt="Vinho Dia a Dia" loading="lazy">
+                            <span class="tag tag-reservas">Reservas</span>
+
+                            <img src="assets/img/img_teste1.png" alt="Douro Reserva Selection" loading="lazy">
                             <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
+
                         <div class="product-body">
                             <h4>Douro Reserva Selection</h4>
                             <p class="product-meta">Douro · Portugal</p>
                             <p class="product-price">19,90 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 3,
+                                    name: 'Douro Reserva Selection',
+                                    price: 19.90,
+                                    image: 'assets/img/img_teste1.png',
+                                    meta: 'Douro · Portugal',
+                                    tag: 'Reservas'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- PRODUTO 3 -->
+                <!-- PRODUTO 3 (DIA A DIA) -->
                 <div class="col-sm-6 col-lg-4">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
-                            <img src="assets/img/img_teste2.png" alt="Vinho Dia a Dia" loading="lazy">
+                            <span class="tag tag-diaadia">Dia-a-dia</span>
+
+                            <img src="assets/img/img_teste2.png" alt="Alentejo Tinto Clássico" loading="lazy">
                             <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
+
                         <div class="product-body">
                             <h4>Alentejo Tinto Clássico</h4>
                             <p class="product-meta">Alentejo · Portugal</p>
                             <p class="product-price">9,90 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 2,
+                                    name: 'Alentejo Tinto Clássico',
+                                    price: 9.90,
+                                    image: 'assets/img/img_teste2.png',
+                                    meta: 'Alentejo · Portugal',
+                                    tag: 'Dia-a-dia'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -179,14 +222,27 @@
                 <div class="col-sm-6 col-lg-4" id="premium">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
-                            <img src="assets/img/img_teste3.png" alt="Vinho Dia a Dia" loading="lazy">
+                            <span class="tag tag-premium">Premium</span>
+
+                            <img src="assets/img/img_teste3.png" alt="Barolo Riserva Elegance" loading="lazy">
                             <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
+
                         <div class="product-body">
                             <h4>Barolo Riserva Elegance</h4>
                             <p class="product-meta">Piemonte · Itália</p>
                             <p class="product-price">39,90 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 4,
+                                    name: 'Barolo Riserva Elegance',
+                                    price: 39.90,
+                                    image: 'assets/img/img_teste3.png',
+                                    meta: 'Piemonte · Itália',
+                                    tag: 'Premium'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -195,14 +251,27 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
-                            <img src="assets/img/img_teste4.png" alt="Vinho Dia a Dia" loading="lazy">
+                            <span class="tag tag-reservas">Reservas</span>
+
+                            <img src="assets/img/img_teste4.png" alt="Colheita Especial 2018" loading="lazy">
                             <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
+
                         <div class="product-body">
                             <h4>Colheita Especial 2018</h4>
                             <p class="product-meta">Dão · Portugal</p>
                             <p class="product-price">17,50 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 5,
+                                    name: 'Colheita Especial 2018',
+                                    price: 17.50,
+                                    image: 'assets/img/img_teste4.png',
+                                    meta: 'Dão · Portugal',
+                                    tag: 'Reservas'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -211,19 +280,69 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="product-card">
                         <div class="product-media">
-                            <span class="product-tag-premium">Premium</span>
-                            <img src="assets/img/img_teste6.png" alt="Vinho Dia a Dia" loading="lazy">
+                            <span class="tag tag-diaadia">Dia-a-dia</span>
+
+                            <img src="assets/img/img_teste6.png" alt="Vinho Verde Fresco" loading="lazy">
                             <a href="product.html" class="product-quick">Ver Produto</a>
                         </div>
+
                         <div class="product-body">
                             <h4>Vinho Verde Fresco</h4>
                             <p class="product-meta">Minho · Portugal</p>
                             <p class="product-price">7,90 €</p>
+
+                            <button class="btn btn-outline-gold w-100 mt-2" onclick="addToCart({
+                                    id: 6,
+                                    name: 'Vinho Verde Fresco',
+                                    price: 7.90,
+                                    image: 'assets/img/img_teste6.png',
+                                    meta: 'Minho · Portugal',
+                                    tag: 'Dia-a-dia'
+                                })">
+                                Adicionar ao Carrinho
+                            </button>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            <!-- ==================================================
+                 PAGINAÇÃO (fora do grid)
+                 ================================================== -->
+            <nav class="mt-5 d-flex justify-content-center" aria-label="Paginação catálogo">
+                <ul class="pagination pagination-premium">
+
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Anterior">‹</a>
+                    </li>
+
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+
+                    <li class="page-item disabled">
+                        <span class="page-link">…</span>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="#">8</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Próximo">›</a>
+                    </li>
+
+                </ul>
+            </nav>
 
         </div>
     </section>
@@ -233,7 +352,6 @@
 
     <!-- Carrinho -->
     <script src="assets/js/cart.js"></script>
-
 </body>
 
 </html>

@@ -105,4 +105,46 @@
     border: 1px solid #6F7682;
 }
 
-/* reuse product-card styles if já tens no style.css */
+/* ===============================
+   PAGINAÇÃO PREMIUM
+   =============================== */
+.pagination-premium {
+    gap: 10px;
+}
+
+.pagination-premium .page-link {
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(0, 0, 0, .40);
+    color: rgba(255, 255, 255, .75);
+
+    border-radius: 12px;
+    padding: 10px 14px;
+    min-width: 44px;
+    text-align: center;
+
+    font-weight: 500;
+    transition: .25s ease;
+    box-shadow: none;
+}
+
+.pagination-premium .page-link:hover {
+    border-color: rgba(214, 182, 106, .50);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.pagination-premium .page-item.active .page-link {
+    border-color: rgba(214, 182, 106, .75);
+    background: rgba(214, 182, 106, .12);
+    color: #d6b66a;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .55);
+}
+
+.pagination-premium .page-item.disabled .page-link {
+    opacity: .35;
+    transform: none;
+}
+
+.pagination-premium .page-link:focus {
+    box-shadow: none;
+}
