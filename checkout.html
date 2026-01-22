@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Checkout · Wine Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <!-- ===============================
+       CSS PERSONALIZADO
+       =============================== -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/product.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/checkout.css">
+</head>
+
+<body>
+
+    <!-- ======================================================
+     NAVBAR
+     ====================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-premium">
+        <div class="container">
+            <a class="navbar-brand brand-mark" href="index.html">
+                <span class="brand-dot"></span> WINE STORE
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto gap-lg-4 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link nav-link-premium" href="catalog.html">Vinhos</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-premium" href="catalog.html#reservas">Reservas</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link nav-link-premium" href="catalog.html#premium">Premium</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link nav-link-premium" href="index.html#contacto">Contacto</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link cart-link" href="cart.html">
+                            Carrinho <span class="cart-badge" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================================================
+       HEADER
+       ====================================================== -->
+    <header class="checkout-hero">
+        <div class="container">
+            <p class="hero-kicker mb-2">Checkout</p>
+            <h1 class="checkout-title">Finalizar Encomenda</h1>
+            <p class="checkout-subtitle">Dados de entrega e pagamento seguro.</p>
+        </div>
+    </header>
+
+    <!-- ======================================================
+       CONTENT
+       ====================================================== -->
+    <main class="section-checkout">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- ==========================
+             FORMULÁRIO
+             ========================== -->
+                <div class="col-lg-7">
+                    <div class="checkout-card">
+
+                        <h3 class="checkout-card-title">Informações do Cliente</h3>
+
+                        <form>
+
+                            <!-- Dados pessoais -->
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="checkout-label">Nome</label>
+                                    <input type="text" class="form-control checkout-input"
+                                        placeholder="Ex: João Silva" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="checkout-label">Email</label>
+                                    <input type="email" class="form-control checkout-input"
+                                        placeholder="ex: joao@email.com" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="checkout-label">Telemóvel</label>
+                                    <input type="tel" class="form-control checkout-input" placeholder="9xx xxx xxx" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="checkout-label">NIF (Opcional)</label>
+                                    <input type="text" class="form-control checkout-input"
+                                        placeholder="ex: 123456789" />
+                                </div>
+                            </div>
+
+                            <div class="checkout-divider"></div>
+
+                            <!-- Entrega -->
+                            <h3 class="checkout-card-title mt-2">Entrega</h3>
+
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="checkout-label">Morada</label>
+                                    <input type="text" class="form-control checkout-input"
+                                        placeholder="Rua / Avenida, nº porta..." />
+                                </div>
+
+                                <div class="col-md-5">
+                                    <label class="checkout-label">Cidade</label>
+                                    <input type="text" class="form-control checkout-input" placeholder="Lisboa" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="checkout-label">Código Postal</label>
+                                    <input type="text" class="form-control checkout-input" placeholder="1000-000" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="checkout-label">País</label>
+                                    <select class="form-select checkout-input">
+                                        <option selected>Portugal</option>
+                                        <option>Espanha</option>
+                                        <option>França</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="checkout-divider"></div>
+
+                            <!-- Pagamento -->
+                            <h3 class="checkout-card-title mt-2">Pagamento</h3>
+
+                            <div class="payment-grid">
+
+                                <label class="pay-option">
+                                    <input type="radio" name="pay" checked />
+                                    <span class="pay-box">
+                                        <span class="pay-title">MB WAY</span>
+                                        <span class="pay-sub">Confirmação imediata</span>
+                                    </span>
+                                </label>
+
+                                <label class="pay-option">
+                                    <input type="radio" name="pay" />
+                                    <span class="pay-box">
+                                        <span class="pay-title">Cartão</span>
+                                        <span class="pay-sub">Visa / MasterCard</span>
+                                    </span>
+                                </label>
+
+                                <label class="pay-option">
+                                    <input type="radio" name="pay" />
+                                    <span class="pay-box">
+                                        <span class="pay-title">Referência</span>
+                                        <span class="pay-sub">Multibanco</span>
+                                    </span>
+                                </label>
+
+                            </div>
+
+                            <div class="checkout-divider"></div>
+
+                            <!-- Nota -->
+                            <label class="checkout-label">Notas (opcional)</label>
+                            <textarea class="form-control checkout-input" rows="3"
+                                placeholder="Ex: Entregar após as 18h"></textarea>
+
+                            <!-- CTA -->
+                            <div class="mt-4 d-flex gap-3 flex-wrap">
+                                <a href="cart.html" class="btn btn-ghost-cta">
+                                    ← Voltar ao Carrinho
+                                </a>
+
+                                <!-- amanhã ligamos isto ao PHP/JS -->
+                                <a href="success.html" class="btn btn-gold-cta">
+                                    Confirmar Encomenda
+                                </a>
+                            </div>
+
+                            <p class="checkout-safe mt-3">
+                                ✔ Checkout seguro · ✔ Dados protegidos · ✔ Envio rápido
+                            </p>
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <!-- ==========================
+             RESUMO ENCOMENDA
+             ========================== -->
+                <div class="col-lg-5">
+                    <aside class="order-summary">
+
+                        <h3 class="checkout-card-title">Resumo da Encomenda</h3>
+
+                        <!-- ADMIN FUTURO:
+                 aqui vamos renderizar os produtos via JS -->
+                        <div class="order-items">
+
+                            <div class="order-item">
+                                <img src="assets/img/img1.png" alt="Vinho" />
+                                <div class="order-item-info">
+                                    <p class="order-item-name">Martino Superiore Petit Verdot</p>
+                                    <p class="order-item-meta">Premium · x1</p>
+                                </div>
+                                <p class="order-item-price">29,90 €</p>
+                            </div>
+
+                            <div class="order-item">
+                                <img src="assets/img/img_teste2.png" alt="Vinho" />
+                                <div class="order-item-info">
+                                    <p class="order-item-name">Alentejo Tinto Clássico</p>
+                                    <p class="order-item-meta">Dia-a-dia · x2</p>
+                                </div>
+                                <p class="order-item-price">19,80 €</p>
+                            </div>
+
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>49,70 €</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Envio</span>
+                            <span class="text-muted">A calcular</span>
+                        </div>
+
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>49,70 €</span>
+                        </div>
+
+                    </aside>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Carrinho -->
+    <script src="assets/js/cart.js"></script>
+</body>
+
+</html>
